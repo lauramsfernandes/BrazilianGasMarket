@@ -1,0 +1,141 @@
+﻿REGIÃO,UF,CONSUMO em mil m3,ANO.
+Norte,Amazonas,230067,2009
+Nordeste,Maranhão,0,2009
+Nordeste,Ceará,69293.03,2009
+Nordeste,Rio Grande do Norte,184839.37,2009
+Nordeste,Pernambuco,0,2009
+Nordeste,Alagoas,6950.33,2009
+Nordeste,Sergipe,157095.8,2009
+Nordeste,Bahia,229460.46,2009
+Sudeste,Minas Gerais,67267.89,2009
+Sudeste,Espírito Santo,143239.33,2009
+Sudeste,Rio de Janeiro,3081726.68,2009
+Sudeste,São Paulo,863881.05,2009
+Sul,Paraná,190359,2009
+Sul,Rio Grande do Sul,0,2009
+Norte,Amazonas,250678.98,2010
+Nordeste,Maranhão,0,2010
+Nordeste.Ceará,61843.73,2010,
+Nordeste,Rio Grande do Norte,172203.32,2010
+Nordeste,Pernambuco,0,2010
+Nordeste,Alagoas,3562.13,2010
+Nordeste,Sergipe,163154,2010
+Nordeste,Bahia,355387.67,2010
+Sudeste,Minas Gerais,77056.53,2010
+Sudeste,Espírito Santo,335155.78,2010
+Sudeste,Rio de Janeiro,3405622.31,2010
+Sudeste,São Paulo,1143103.78,2010
+Sul,Paraná,164420.3,2010
+Sul,Rio Grande do Sul,0,2010
+Norte,Amazonas,241539.64,2011
+Nordeste,Maranhão,0,2011
+Nordeste,Ceará,59473.68,2011
+Nordeste,Rio Grande do Norte,183639.18,2011
+Nordeste,Pernambuco,0,2011
+Nordeste,Alagoas,2930.77,2011
+Nordeste,Sergipe,161794.38,2011
+Nordeste,Bahia,328240.66,2011
+Sudeste,Minas Gerais,97135.32,2011
+Sudeste,Espírito Santo,519571.38,2011
+Sudeste,Rio de Janeiro,3747200.97,2011
+Sudeste,São Paulo,1577196.96,2011
+Sul,Paraná,211782.1,2011
+Sul,Rio Grande do Sul,0,2011
+Norte,Amazonas,236071.58,2012
+Nordeste,Maranhão,0,2012
+Nordeste,Ceará,57675.13,2012
+Nordeste,Rio Grande do Norte,170352.98,2012
+Nordeste,Pernambuco,0,2012
+Nordeste,Alagoas,1779.93,2012
+Nordeste,Sergipe,148739.14,2012
+Nordeste,Bahia,379945.62,2012
+Sudeste,Minas Gerais,167294.96,2012
+Sudeste,Espírito Santo,532896.55,2012
+Sudeste,Rio de Janeiro,4214759.38,2012
+Sudeste,São Paulo,1759185.75,2012
+Sul,Paraná,426556.4,2012
+Sul,Rio Grande do Sul,0,2012
+Norte,Amazonas,242996.42,2013
+Nordeste,Maranhão,9545.06,2013
+Nordeste,Ceará,34901.69,2013
+Nordeste,Rio Grande do Norte,147728.34,2013
+Nordeste,Pernambuco,0,2013
+Nordeste,Alagoas,1690.79,2013
+Nordeste,Sergipe,163658.58,2013
+Nordeste,Bahia,370831.52,2013
+Sudeste,Minas Gerais,183993.93,2013
+Sudeste,Espírito Santo,577045.2,2013
+Sudeste,Rio de Janeiro,4285169.78,2013
+Sudeste,São Paulo,1893266.46,2013
+Sul,Paraná,366310.2,2013
+Sul,Rio Grande do Sul,0,2013
+Norte,Amazonas,232958.67,2014
+Nordeste,Maranhão,2917.65,2014
+Nordeste,Ceará,40677.7,2014
+Nordeste,Rio Grande do Norte,150418.32,2014
+Nordeste,Pernambuco,29297.02,2014
+Nordeste,Alagoas,2525.36,2014
+Nordeste,Sergipe,150240.54,2014
+Nordeste,Bahia,440790.96,2014
+Sudeste,Minas Gerais,202957.45,2014
+Sudeste,Espírito Santo,649819.34,2014
+Sudeste,Rio de Janeiro,4049333.82,2014
+Sudeste,São Paulo,2151923.4,2014
+Sul,Paraná,325064.7,2014
+Sul,Rio Grande do Sul,0,2014
+Norte,Amazonas,228884.3,2015
+Nordeste,Maranhão,8554.12,2015
+Nordeste,Ceará,50137.48,2015
+Nordeste,Rio Grande do Norte,134237.84,2015
+Nordeste,Pernambuco,488137.09,2015
+Nordeste,Alagoas,1205.82,2015
+Nordeste,Sergipe,139739.93,2015
+Nordeste,Bahia,848050.08,2015
+Sudeste,Minas Gerais,185005.18,2015
+Sudeste,Espírito Santo,644823.08,2015
+Sudeste,Rio de Janeiro,4259647.83,2015
+Sudeste,São Paulo,2452114.42,2015
+Sul,Paraná,432079.62,2015
+Sul,Rio Grande do Sul,0,2015
+Norte,Amazonas,236054.59,2016
+Nordeste,Maranhão,9570.23,2016
+Nordeste,Ceará,54262.99,2016
+Nordeste,Rio Grande do Norte,134942.38,2016
+Nordeste,Pernambuco,525590.38,2016
+Nordeste,Alagoas,1118.48,2016
+Nordeste,Sergipe,145034.84,2016
+Nordeste,Bahia,548678.91,2016
+Sudeste,Minas Gerais,294905.71,2016
+Sudeste,Espírito Santo,689453.38,2016
+Sudeste,Rio de Janeiro,3879619.45,2016
+Sudeste,São Paulo,2254850.9,2016
+Sul,Paraná,412462.63,2016
+Sul,Rio Grande do Sul,173253.47,2016
+Norte,Amazonas,222345.79,2017
+Nordeste,Maranhão,6291.9,2017
+Nordeste,Ceará,47085,2017
+Nordeste,Rio Grande do Norte,102203.41,2017
+Nordeste,Pernambuco,558770,2017
+Nordeste,Alagoas,1111.66,2017
+Nordeste,Sergipe,130591.48,2017
+Nordeste,Bahia,558356,2017
+Sudeste,Minas Gerais,299742.11,2017
+Sudeste,Espírito Santo,712708.37,2017
+Sudeste,Rio de Janeiro,4011102,2017
+Sudeste,São Paulo,2390758,2017
+Sul,Paraná,447454.3,2017
+Sul,Rio Grande do Sul,141658.78,2017
+Norte,Amazonas,232636.95,2018
+Nordeste,Maranhão,6176.57,2018
+Nordeste,Ceará,49427.41,2018
+Nordeste,Rio Grande do Norte,124734.57,2018
+Nordeste,Pernambuco,613746.65,2018
+Nordeste,Alagoas,1186.48,2018
+Nordeste,Sergipe,128146.58,2018
+Nordeste,Bahia,459635.72,2018
+Sudeste,Minas Gerais,295546.66,2018
+Sudeste,Espírito Santo,683950.28,2018
+Sudeste,Rio de Janeiro,4004219.12,2018
+Sudeste,São Paulo,2207261.38,2018
+Sul,Paraná,399565.43,2018
+Sul,Rio Grande do Sul,146492.81,2018
