@@ -61,9 +61,10 @@ The data were collected from:
 History of the volume of electricity produced in the country in GWh, expressed by the values of energy load dispatched in the National Interconnected System - SIN, classified by renewable sources or not and the volume produced by generators not yet interconnected.
 
 * [The World Bank](https://data.worldbank.org/country/brazil)
-* [Ministério de Minas e Energia] (http://www.mme.gov.br/documents/36216/1119340/06+-+Boletim+Mensal+de+Acompanhamento+da+Ind%C3%BAstria+de+G%C3%A1s+Natural+Junho+2020/4ecd27ca-bd64-bfa7-3510-03799045f87f) Demand by Segment: Monthly Industry Follow-up Bulletin of Natural Gas.
+  
+* [Ministério de Minas e Energia](http://www.mme.gov.br/documents/36216/1119340/06+-+Boletim+Mensal+de+Acompanhamento+da+Ind%C3%BAstria+de+G%C3%A1s+Natural+Junho+2020/4ecd27ca-bd64-bfa7-3510-03799045f87f) Demand by Segment: Monthly Industry Follow-up Bulletin of Natural Gas.
 
-* [NASA Giovanni] (https://giovanni.gsfc.nasa.gov/giovanni/) Precipitation Data. Instructions after log in on the website:
+* [NASA Giovanni](https://giovanni.gsfc.nasa.gov/giovanni/) Precipitation Data. Instructions after log in on the website:
 
 
 > 1. `Select Plot`: Time Series, Seasonal
