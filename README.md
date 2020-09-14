@@ -21,7 +21,7 @@ Nowadays the Brazilian Natural production and transportation is controlled by Pe
 
 The main core of it is deal with the transportation and trading of natural gas and LNG, and generation and trading of electric power, and the fertilizer business.
 
-Its important to mention that Petrobras also controls the distribution of oil products, ethanol, biodiesel and `natural gas` to wholesalers and through the Petrobras Distribuidora S.A. retail network in Brazil
+Its important to mention that Petrobras also controls the distribution of oil products, ethanol, biodiesel and natural gas to wholesalers and through the Petrobras Distribuidora S.A. retail network in Brazil
 
 #### Termination Commitment Term
 
@@ -74,3 +74,31 @@ History of the volume of electricity produced in the country in GWh, expressed b
 > 6. `Units`: mm/month
 > After making the selection above, click on `Plot Data`
 * [EIA](https://www.eia.gov/environment/emissions/co2_vol_mass.php) Carbon Dioxide Emissions Coefficients
+
+## Files
+
+* 1_naturalGas_Wrangling.ypynb File
+  
+> Wrangles and load all data used in this repository.
+
+* 2_naturalGas_Plots.ipynb File
+
+> Concentrates all plots made from the collected data.
+
+* 3_naturalGas_ML.ipynb File
+
+> Concetrates all machile learning code used in this repository.
+
+## Folders
+
+* dashboard
+
+> Contains all files provenients of the dashboard
+
+* data_set
+
+> Contains all data used in this repository.
+
+* plots
+
+> Destiny folder to all plots saved in `2_naturalGas_Plot` file.
