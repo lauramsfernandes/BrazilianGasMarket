@@ -31,7 +31,7 @@ Through the agreement, the state company has committed to sell assets related to
 
 #### Gas to Grow Program
 
-In September 2020, the Brazilian Chamber of Representatives approved the bill 6407/2013. Known as the “New Gas Law”, it is part of the Gas to Grow¹ program (Gás para Crescer) and establishes the new legal framework for the Brazilian Natural Gas market.
+In September 2020, the Brazilian Chamber of Representatives approved the bill 6407/2013. Known as the “New Gas Law”, it is part of the Gas to Grow⁴ program (Gás para Crescer) and establishes the new legal framework for the Brazilian Natural Gas market.
 
 The program aims to boost the market, facilitating the operation of private companies in the gas sector. The main changes proposed are:
 
@@ -45,9 +45,11 @@ Source:
 
 1. [Wikipedia](https://en.wikipedia.org/wiki/Petrobras)
 
-2. [Fortune - Global 500](https://fortune.com/company/petrobras/global500/)
+2. [Petrobras Company Profile](https://fortune.com/company/petrobras/global500/). Fortune - Global 500, 10/08/2020.
 
-3. [CADE](http://www.cade.gov.br/noticias/cade-e-petrobras-celebram-acordo-para-venda-de-ativos-no-mercado-de-gas-natural)
+3. Assessoria de Comunicação Social. [Cade e Petrobras celebram acordo para venda de ativos no mercado de gás natural](http://www.cade.gov.br/noticias/cade-e-petrobras-celebram-acordo-para-venda-de-ativos-no-mercado-de-gas-natural). CADE, 08/07/2019.
+
+4. PAMPLONA, Nicola e TEREZA, Irany. [Em 2000, o jeito foi racionar para não ter apagão](https://web.archive.org/web/20110524011155/http://www.eletrosul.gov.br/gdi/gdi/cl_pesquisa.php?pg=cl_abre&cd=mlndef4~BPhd). O Estado de S. Paulo, 26/06/2006.
 
 ## About the data
 
