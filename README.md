@@ -8,7 +8,7 @@ Brazilian Government is working to open its Natural Gas Market to third-parties 
 
 ### Context
 
-Nowadays the Brazilian Natural production and transportation is controlled by Petrobras, a state-owed multinational corporation in the petroleum industry, ranked as the 120th largest company in the world by revenue². The company has 6 business areas¹ (in order of revenue):
+Nowadays the Brazilian Natural production and transportation is controlled by Petrobras, a state-owed multinational corporation in the petroleum industry, ranked as the 120th largest company in the world by revenue¹. The company has 6 business areas² (in order of revenue):
 
 > * `Refining, transportation and marketing`
 > * `Exploration and production`
@@ -43,9 +43,9 @@ The program aims to boost the market, facilitating the operation of private comp
 
 Source:
 
-1. [Wikipedia](https://en.wikipedia.org/wiki/Petrobras)
+1. [Petrobras Company Profile](https://fortune.com/company/petrobras/global500/). Fortune - Global 500, 10/08/2020.
 
-2. [Petrobras Company Profile](https://fortune.com/company/petrobras/global500/). Fortune - Global 500, 10/08/2020.
+2. [Wikipedia](https://en.wikipedia.org/wiki/Petrobras)
 
 3. Assessoria de Comunicação Social. [Cade e Petrobras celebram acordo para venda de ativos no mercado de gás natural](http://www.cade.gov.br/noticias/cade-e-petrobras-celebram-acordo-para-venda-de-ativos-no-mercado-de-gas-natural). CADE, 08/07/2019.
 
