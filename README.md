@@ -10,10 +10,10 @@ Brazilian Government is working to open its Natural Gas Market to third-parties 
 
 Nowadays the Brazilian Natural production and transportation is controlled by Petrobras, a state-owed multinational corporation in the petroleum industry, ranked as the 120th largest company in the world by revenue¹. The company has 6 business areas² (in order of revenue):
 
-> * `Refining, transportation and marketing`
-> * `Exploration and production`
+> * `Refining, Transportation and Marketing`
+> * `Exploration and Production`
 > * `Distribution`
-> * `Gas and power`
+> * `Gas and Power`
 > * `International`
 > * `Biofuels`
 
