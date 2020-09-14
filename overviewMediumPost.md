@@ -37,9 +37,9 @@ plt.savefig('plots/demand.png',dpi=1200,bbox_inches='tight')
 
 ## Reinjection
 
-It is import to mention the reinjection question to clarify some miscomprehension about the subject that can lead to wrong assumptions about the natural gas demand. Some industry consultants with economy background may think that reinjection is a natural gas waste. However is a reservoir technique to maintain its internal pressure. 
+It is import to mention the reinjection question to clarify some miscomprehension about the subject that can lead to wrong assumptions about the natural gas demand. Some industry consultants with economy background may think that reinjection is a natural gas waste. However is a reservoir technique to maintain its internal pressure.
 
-A correlation graph was plot to prove that reinjection has no relation with any waste metric.
+A correlation graph using the `balance` dataframe was plot to prove that reinjection has no relation with any waste metric. For example, if the reinjection had any correlation with gas flaring, it would indicates that reinjection were being made in the same period of time that offshore plataforms was burning gas to relieve the production.
 ```
 corr = balance.df.corr()
 ax = sns.heatmap(
@@ -61,4 +61,3 @@ plt.savefig('plots/corr.png',dpi=600,bbox_inches='tight')
 ![Correlation](./plots/corr.png)
 ## Sales
 ## Energy Sector
-
