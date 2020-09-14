@@ -60,4 +60,57 @@ plt.savefig('plots/corr.png',dpi=600,bbox_inches='tight')
 ```
 ![Correlation](./plots/corr.png)
 ## Sales
+The data was scrapped from a govern report [Monthly Industry Follow-up Natural Gas Bulletin](http://www.mme.gov.br/documents/36216/1119340/06+-+Boletim+Mensal+de+Acompanhamento+da+Ind%C3%BAstria+de+G%C3%A1s+Natural+Junho+2020/4ecd27ca-bd64-bfa7-3510-03799045f87f).
+
+```
+# Dict with values scrapp from MME Relatory
+sales_segment_ = {'Industrial¹' : [43.61, 40.82, 40.77, 39.75, 36.97, 36.34, 37.17, 35.70, 28.16, 31.22, 34.61, 33.87],
+                  'Automotive' : [4.82, 4.96, 5.40, 6.06, 6.26, 5.87, 6.29, 4.83, 3.36, 3.63, 4.34, 4.72],
+                  'Residencial' : [0.97, 1.11, 1.18, 1.26, 1.27, 1.00, 1.14, 1.30, 1.38, 1.49, 1.64, 1.33],
+                  'Comercial' : [0.79, 0.83, 0.78, 0.84, 0.91, 0.86, 0.87, 0.84, 0.51, 0.32, 0.46, 0.64],
+                  'Electric Generation' : [45.90, 29.59, 34.25, 27.69, 29.03, 40.46, 25.63, 19.52, 17.26, 15.70, 18.12, 22.78],
+                  'Cogenaration' : [2.50, 2.37, 2.65, 2.84, 2.65, 2.30, 2.12, 2.26, 2.22, 1.65, 2.07, 2.10],
+                  'Others (including GNC)' : [0.04, 0.58, 0.53, 0.40, 0.83, 0.42, 0.35, 0.36, 1.22, 0.76, 0.65, 0.63]}
+
+# Creating DataFrame
+sales_segment_ = pd.DataFrame(data=sales_segment_)
+
+# Setting Index
+sales_segment_.index = [2015,2016,2017,2018,2019,1,2,3,4,5,6,2020]
+
+# Creating DataFrame for Covid Period
+sales_seg_covid_ = sales_segment_.loc[[1,2,3,4,5,6]].copy()
+
+# Setting Index to string
+sales_seg_covid_.index = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun']
+
+# Dropping Covid Period from Segment DataFrame
+sales_segment_.drop([1,2,3,4,5,6,2020], inplace=True)
+```
+
+```
+# Turning Sales Period DataFrame into MyDataFrame
+sales_segment = MyDataFrame(sales_segment_)
+
+# Setting unit, title and footer
+sales_segment.unit = '10⁶ m³/day'
+sales_segment.title = 'Brazilian Sales of Natural Gas by Segment'
+sales_segment.footer = 'Source:\nMME, Monthly Industry Follow-up Bulletin of Natural Gas - June 2020\n\n¹ Includes consumption by refineries, fertilizer factories and use of gas as raw material.'
+```
+```
+sales_per = sales_segment.df.copy()
+
+# Calculation proportion
+years=np.arange(2015,2020,1)
+for i, year in enumerate(years):
+    sales_per.loc[year] = sales_segment.df.iloc[i,:].div(sales_segment.df.iloc[i,:].sum())
+
+# Converting into MyDataFrame
+sales_per = MyDataFrame(sales_per)
+
+# Setting unit, title and footer
+sales_per.unit = '%'
+sales_per.title = 'Brazilian Sales of Natural Gas by Segment'
+sales_per.footer = 'Source:\nMME, Monthly Industry Follow-up Bulletin of Natural Gas - June 2020\n\n¹ Includes consumption by refineries, fertilizer factories and use of gas as raw material.'
+```
 ## Energy Sector
