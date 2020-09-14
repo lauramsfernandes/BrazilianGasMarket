@@ -30,7 +30,7 @@ plt.figtext(0.01,-0.3, balance.footer)
 plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.);
 plt.savefig('plots/demand.png',dpi=1200,bbox_inches='tight')
 ```
-![Demand](plots\demand.png)
+![Demand](\plots/demand.png)
 
 ## Reinjection
 ## Sales
