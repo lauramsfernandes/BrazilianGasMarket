@@ -18,7 +18,13 @@ demand = MyDataFrame(balance.df.loc[:,['Import','Reinjection', 'Gas flaring', 'O
 # Setting unit, title and footer
 demand.title = 'Brazilian Natural Gas Demand'
 demand.unit = '10⁶ m³'
-demand.footer = 'Sources: \nANP/SIM, as per Ordinance ANP No. 43/98, for imports data; ANP/SDP, as per Decree No. 2.705/98, for\nproduction, reinjection, gas flaring and losses data; Petrobras, for own consumption, NGL and sales data.\n\n¹ Refers to Petrobras own consumption in production areas, refineries, NGPP (Natural Gas Power Plant),\n transportation and storage. \n² Volume of gas absorbed in NGPPs. \n³ Sales to distributors, nitrofertilizers plants (Fafen) and electricity generation.'
+demand.footer = 'Sources: \nANP/SIM, as per Ordinance ANP No. 43/98, for imports data;
+ ANP/SDP, as per Decree No. 2.705/98, for\nproduction, reinjection, gas flaring and
+  losses data; Petrobras, for own consumption, NGL and sales data.\n\n¹ Refers to
+   Petrobras own consumption in production areas, refineries, NGPP (Natural Gas Power
+    Plant),\n transportation and storage. \n² Volume of gas absorbed in NGPPs. \n³ Sales
+     to distributors, nitrofertilizers plants (Fafen) and electricity generation.'
+     
 ```
 
 ## Reinjection
