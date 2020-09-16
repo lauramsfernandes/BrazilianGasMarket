@@ -2,18 +2,67 @@
 
 ## About
 
-[An Overview of the Brazilian New Gas Market and the Electric Sector](https://medium.com/@lauramsfernandes/an-overview-of-the-brazilian-new-gas-market-and-the-electric-sector-b173f34ac307) it is a blog post made on Sep 9 2020, and has the objective to understand how is settle the Brazilian gas market nowadays and how the market opening can affect the Brazilian Energy Sector. It aims to answer the following questions:
+[An Overview of the Brazilian New Gas Market and the Electric Sector](https://medium.com/@lauramsfernandes/an-overview-of-the-brazilian-new-gas-market-and-the-electric-sector-b173f34ac307) it is a blog post made on Sep 9 2020, and has the objective to understand how is settle the Brazilian gas market nowadays and how the market opening can affect the Brazilian Energy Sector. 
+
+## Questions
+
+The blog post aims to answer the following questions:
 
 1. How is the demand for Natural Gas in Brazil?
 2. Reinjection: Reservoir Strategy or Lack of Structure?
 3. How are sales structured by segment?
 4. How can the New Gas Market impact the Energy Sector?
 
-## Plots
+## Business Understanding
 
+### Context
 
+Nowadays the Brazilian Natural production and transportation is controlled by Petrobras, a state-owed multinational corporation in the petroleum industry, ranked as the 120th largest company in the world by revenue¹. The company has 6 business areas² (in order of revenue):
 
-## MyDataFrame Class
+> * `Refining, Transportation and Marketing`
+> * `Exploration and Production`
+> * `Distribution`
+> * `Gas and Power`
+> * `International`
+> * `Biofuels`
+
+#### Gas and Power
+
+The main core of it is deal with the transportation and trading of natural gas and LNG, and generation and trading of electric power, and the fertilizer business.
+
+Its important to mention that Petrobras also controls the distribution of oil products, ethanol, biodiesel and natural gas to wholesalers and through the Petrobras Distribuidora S.A. retail network in Brazil
+
+#### Termination Commitment Term
+
+The Administrative Council for Economic Defense (Portuguese: Conselho Administrativo de Defesa Econômica - CADE) and Petrobras signed a Termination Commitment Term³ due to investigations regarding alleged anti-competitive conduct by Petrobras in the Brazilian Natural Gas Market, including abuse of a dominant position and discrimination against competitors through differentiated pricing.
+
+Through the agreement, the state company has committed to sell assets related to the natural gas market. The measure aims to prevent the future occurrence of the same facts investigated by Cade, in addition to stimulating competition in the sector, so far exploited almost entirely by Petrobras, through the entry of new agents that would attract national and international investments at various levels of the chain productive.
+
+#### Gas to Grow Program
+
+In September 2020, the Brazilian Chamber of Representatives approved the bill 6407/2013. Known as the “New Gas Law”, it is part of the Gas to Grow⁴ program (Gás para Crescer) and establishes the new legal framework for the Brazilian Natural Gas market.
+
+The program aims to boost the market, facilitating the operation of private companies in the gas sector. The main changes proposed are:
+
+> * Ensure non-discriminatory third-party access (TPA) for essential facilities (e.g., upstream pipelines, gas processing plants, and liquefied natural gas terminals);
+> * Replace the point-to-point contracts by an entry-exit system with liquid virtual trading points;
+> * Guarantee an independent transmission system;
+> * Change the auction regime for new pipelines and expansion from concession to authorization or permit, reducing the process of creating new networks;
+> * Harmonize the state and federal regulation regarding Natural Gas.
+
+Source:
+
+1. [Petrobras Company Profile](https://fortune.com/company/petrobras/global500/). Fortune - Global 500, 10/08/2020.
+
+2. [Wikipedia](https://en.wikipedia.org/wiki/Petrobras)
+
+3. Assessoria de Comunicação Social. [Cade e Petrobras celebram acordo para venda de ativos no mercado de gás natural](http://www.cade.gov.br/noticias/cade-e-petrobras-celebram-acordo-para-venda-de-ativos-no-mercado-de-gas-natural). CADE, 08/07/2019.
+
+4. [Programa Gás Para Crescer](http://www.mme.gov.br/web/guest/secretarias/petroleo-gas-natural-e-biocombustiveis/acoes-e-programas/programas/gas-para-crescer). Secretaria de Petróleo, Gás e Energia, Ministério de Minas e Energia, 24/06/2016.
+
+## Prepare Data
+
+### MyDataFrame Class
 
 In order to capture and simplify access to some important informations *(e.g., title, unit)* about the tables collected, and to assembly all functions as methods in a the same place, a class was created. `MyDataFrame` class also perfomes some changes into the original tables to improve their readability and to translate some terms.
 
@@ -258,6 +307,7 @@ demand.title = 'Brazilian Natural Gas Demand'
 demand.unit = '10⁶ m³'
 demand.footer = 'Sources: \nANP/SIM, as per Ordinance ANP No. 43/98, for imports data; ANP/SDP, as per Decree No. 2.705/98, for\nproduction, reinjection, gas flaring and losses data; Petrobras, for own consumption, NGL and sales data.\n\n¹ Refers to Petrobras own consumption in production areas, refineries, NGPP (Natural Gas Power Plant),\n transportation and storage. \n² Volume of gas absorbed in NGPPs. \n³ Sales to distributors, nitrofertilizers plants (Fafen) and electricity generation.'
 ```
+
 ```python
 demand.df.plot()
 plt.xticks(np.arange(2010,2020,1))
@@ -269,7 +319,11 @@ plt.savefig('plots/demand.png',dpi=1200,bbox_inches='tight')
 ```
 ![Demand](./plots/demand.png)
 
+The graph above shows:
 
+* Decreased dependence on imports with increased production
+* Increased gas reinjection caused by oil production in the pre-salt layer
+* Decrease in sales. Motivation needs more research.
 
 ## Reinjection
 
@@ -296,6 +350,8 @@ plt.title('Balance Correlation')
 plt.savefig('plots/corr.png',dpi=600,bbox_inches='tight')
 ```
 ![Correlation](./plots/corr.png)
+
+* The heatmap above does not show any considerable correlation between reinjection and others variables linked with Natural Gas waste.
 
 ## Sales
 
@@ -354,6 +410,9 @@ sales_per.title = 'Brazilian Sales of Natural Gas by Segment'
 sales_per.footer = 'Source:\nMME, Monthly Industry Follow-up Bulletin of Natural Gas - June 2020\n\n¹ Includes consumption by refineries, fertilizer factories and use of gas as raw material.'
 ```
 ![Sales per Segment](./plots/sales_per.png)
+
+* The industrial and electric generation segments are mainly the largest consumers of Natural Gas
+* It is possible to notice that the electric power generation fluctuation segment follow the same trend as the variation of electric energy production (graph below) in the same period.
 
 ## Energy Sector
 
@@ -416,6 +475,10 @@ plt.legend(bbox_to_anchor=(1.01, 1), loc='upper left', borderaxespad=0.);
 plt.savefig('plots/energy_source.png',dpi=600,bbox_inches='tight')
 ```
 ![Energy Source](./plots/energy_source.png)
+
+* Brazilian electric energy is generated mainly by hydroelectric plants
+* There has been a significant increase in the use of wind energy since 2014
+
 ```python
 precip.df.mean().plot(kind='bar')
 plt.ylabel(precip.unit)
@@ -425,5 +488,7 @@ plt.savefig('plots/avg_precip.png',dpi=1200,bbox_inches='tight');
 ```
 ![Precipitation](./plots/avg_precip.png)
 
+* The dry period in Brazil goes from May to Octuber.
+* The lowest rainfall period occurs in the month of August.
 ---
 Notes: All plots code can be found on [plot file](2_naturalGas_Plots.ipynb).
