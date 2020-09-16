@@ -42,7 +42,7 @@ Atributes:
 
 >`df`: is the DataFrame it self.
 
->`translator`: a Translator() instancied object 
+>`translator`: a Translator() instancied object
 
 >`title`: is the DataFrame's title.
 
@@ -350,4 +350,7 @@ sales_per.title = 'Brazilian Sales of Natural Gas by Segment'
 sales_per.footer = 'Source:\nMME, Monthly Industry Follow-up Bulletin of Natural Gas - June 2020\n\n¹ Includes consumption by refineries, fertilizer factories and use of gas as raw material.'
 ```
 ![Sales per Segment](./plots/sales_per.png)
+
 ## Energy Sector
+
+
