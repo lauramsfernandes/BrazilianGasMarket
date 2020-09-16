@@ -49,7 +49,7 @@ Source:
 
 3. Assessoria de Comunicação Social. [Cade e Petrobras celebram acordo para venda de ativos no mercado de gás natural](http://www.cade.gov.br/noticias/cade-e-petrobras-celebram-acordo-para-venda-de-ativos-no-mercado-de-gas-natural). CADE, 08/07/2019.
 
-4. PAMPLONA, Nicola e TEREZA, Irany. [Em 2000, o jeito foi racionar para não ter apagão](https://web.archive.org/web/20110524011155/http://www.eletrosul.gov.br/gdi/gdi/cl_pesquisa.php?pg=cl_abre&cd=mlndef4~BPhd). O Estado de S. Paulo, 26/06/2006.
+4. [Programa Gás Para Crescer](http://www.mme.gov.br/web/guest/secretarias/petroleo-gas-natural-e-biocombustiveis/acoes-e-programas/programas/gas-para-crescer). Secretaria de Petróleo, Gás e Energia, Ministério de Minas e Energia, 24/06/2016.
 
 ## About the data
 
