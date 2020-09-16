@@ -353,4 +353,6 @@ sales_per.footer = 'Source:\nMME, Monthly Industry Follow-up Bulletin of Natural
 
 ## Energy Sector
 
+The Brazilian electric system is very dependent on interminable energy sources (e.g., hydro). And opening up the gas market, consequently increasing its supply, is an opportunity to reduce this dependency. To show how dependent the electricity production are from hydropower, A time series of energy production in the last decade and the monthly average of precipitation in the country are created at [wrangling file](1_naturalGas_Wrangling.ipynb) under the number `16`. With these two data, it is possible to have an idea of the system vulnerability.
+
 
