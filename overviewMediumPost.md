@@ -110,6 +110,7 @@ class MyDataFrame:
         self.title = self.df.columns[0][0]
         self.unit = self.df.columns[1][1]
 
+
     def drop_levels(self):
         """
         Drops two column levels that contained the infos previously captured (table's title and unit)
