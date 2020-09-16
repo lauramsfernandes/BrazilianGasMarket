@@ -411,6 +411,7 @@ plt.title(energy_source.title)
 plt.legend(bbox_to_anchor=(1.01, 1), loc='upper left', borderaxespad=0.);
 plt.savefig('plots/energy_source.png',dpi=600,bbox_inches='tight')
 ```
+![Energy Source](./plots/energy_source.png)
 ```python
 precip.df.mean().plot(kind='bar')
 plt.ylabel(precip.unit)
@@ -418,3 +419,4 @@ plt.title('Brazilian Monthly Average Precipitation')
 plt.figtext(0.05,-0.02, precip.footer);
 plt.savefig('plots/avg_precip.png',dpi=1200,bbox_inches='tight');
 ```
+![Precipitation](./plots/avg_precip.png)
