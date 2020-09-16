@@ -7,7 +7,7 @@
 3. How are sales structured by segment?
 4. How can the New Gas Market impact the Energy Sector?
 
-## plots
+## Plots
 
 All plots code can be found on [plot file](2_naturalGas_Plots.ipynb).
 
