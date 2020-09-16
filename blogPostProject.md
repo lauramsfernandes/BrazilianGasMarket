@@ -1,4 +1,6 @@
-# About
+# Project: Write a data science blog post
+
+## About
 
 [An Overview of the Brazilian New Gas Market and the Electric Sector](https://medium.com/@lauramsfernandes/an-overview-of-the-brazilian-new-gas-market-and-the-electric-sector-b173f34ac307) it is a blog post made on Sep 9 2020, and has the objective to understand how is settle the Brazilian gas market nowadays and how the market opening can affect the Brazilian Energy Sector. It aims to answer the following questions:
 
@@ -9,7 +11,7 @@
 
 ## Plots
 
-All plots code can be found on [plot file](2_naturalGas_Plots.ipynb).
+
 
 ## MyDataFrame Class
 
@@ -241,7 +243,7 @@ class MyDataFrame:
 
 ```
 
-## Demand
+## How is the demand for Natural Gas in Brazil?
 
 To understand the behavior of the Brazilian Natural Gas market, is important to analyze the demand for the fuel in recent years. In the article this is done with a selection of the items referring to the demand in the balance sheet table.
 
@@ -266,6 +268,8 @@ plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.);
 plt.savefig('plots/demand.png',dpi=1200,bbox_inches='tight')
 ```
 ![Demand](./plots/demand.png)
+
+
 
 ## Reinjection
 
@@ -383,8 +387,8 @@ energy_source.df.drop(2019,inplace=True)
 energy_source.unit = 'GWh'
 energy_source.title = 'Electric Energy by Source'
 energy_source.footer = 'Source: ANEEL\nNotes: History of the electric energy volume produced in the country in GWh, expressed by the values of energy load \ndispatched in the National Interconnected System - SIN, classified by renewable sources or not and the volume \nproduced by the generators not yet interconnected.'
-'''
-'''python
+```
+```python
 skip = np.arange(0,21,1)
 precip = MyDataFrame(pd.read_csv(r'data_set\precip.csv', skiprows=skip))
 
@@ -420,3 +424,6 @@ plt.figtext(0.05,-0.02, precip.footer);
 plt.savefig('plots/avg_precip.png',dpi=1200,bbox_inches='tight');
 ```
 ![Precipitation](./plots/avg_precip.png)
+
+---
+Notes: All plots code can be found on [plot file](2_naturalGas_Plots.ipynb).
