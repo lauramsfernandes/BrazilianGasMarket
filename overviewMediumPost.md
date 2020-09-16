@@ -15,7 +15,7 @@ All plots code can be found on [plot file](2_naturalGas_Plots.ipynb).
 
 At [wrangling file](1_naturalGas_Wrangling.ipynb) under the number `6` you can find the code thats load and set the MyDataFrame instantiated class about the Brazilian Natural Gas demand.
 
-```
+```python
 # Demand DataFrame
 demand = MyDataFrame(balance.df.loc[:,['Import','Reinjection', 'Gas flaring', 'Own consumption¹', 'NGL²', 'Sales³', 'Adjustments and losses']])
 
@@ -24,7 +24,7 @@ demand.title = 'Brazilian Natural Gas Demand'
 demand.unit = '10⁶ m³'
 demand.footer = 'Sources: \nANP/SIM, as per Ordinance ANP No. 43/98, for imports data; ANP/SDP, as per Decree No. 2.705/98, for\nproduction, reinjection, gas flaring and losses data; Petrobras, for own consumption, NGL and sales data.\n\n¹ Refers to Petrobras own consumption in production areas, refineries, NGPP (Natural Gas Power Plant),\n transportation and storage. \n² Volume of gas absorbed in NGPPs. \n³ Sales to distributors, nitrofertilizers plants (Fafen) and electricity generation.'
 ```
-```
+```python
 demand.df.plot()
 plt.xticks(np.arange(2010,2020,1))
 plt.ylabel(demand.unit)
@@ -40,7 +40,7 @@ plt.savefig('plots/demand.png',dpi=1200,bbox_inches='tight')
 It is import to mention the reinjection question to clarify some miscomprehension about the subject that can lead to wrong assumptions about the natural gas demand. Some industry consultants with economy background may think that reinjection is a natural gas waste. However is a reservoir technique to maintain its internal pressure.
 
 A correlation graph using the `balance` dataframe was plot to prove that reinjection has no relation with any waste metric. For example, if the reinjection had any correlation with gas flaring, it would indicates that reinjection were being made in the same period of time that offshore plataforms was burning gas to relieve the production.
-```
+```python
 corr = balance.df.corr()
 ax = sns.heatmap(
     corr,
@@ -62,7 +62,7 @@ plt.savefig('plots/corr.png',dpi=600,bbox_inches='tight')
 ## Sales
 The data was scrapped from a govern report [Monthly Industry Follow-up Natural Gas Bulletin](http://www.mme.gov.br/documents/36216/1119340/06+-+Boletim+Mensal+de+Acompanhamento+da+Ind%C3%BAstria+de+G%C3%A1s+Natural+Junho+2020/4ecd27ca-bd64-bfa7-3510-03799045f87f).
 
-```
+```python
 # Dict with values scrapp from MME Relatory
 sales_segment_ = {'Industrial¹' : [43.61, 40.82, 40.77, 39.75, 36.97, 36.34, 37.17, 35.70, 28.16, 31.22, 34.61, 33.87],
                   'Automotive' : [4.82, 4.96, 5.40, 6.06, 6.26, 5.87, 6.29, 4.83, 3.36, 3.63, 4.34, 4.72],
@@ -88,7 +88,7 @@ sales_seg_covid_.index = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun']
 sales_segment_.drop([1,2,3,4,5,6,2020], inplace=True)
 ```
 
-```
+```python
 # Turning Sales Period DataFrame into MyDataFrame
 sales_segment = MyDataFrame(sales_segment_)
 
@@ -98,7 +98,7 @@ sales_segment.title = 'Brazilian Sales of Natural Gas by Segment'
 sales_segment.footer = 'Source:\nMME, Monthly Industry Follow-up Bulletin of Natural Gas - June 2020\n\n¹ Includes consumption by refineries, fertilizer factories and use of gas as raw material.'
 ```
 After that it was calculated the segment proportion.
-```
+```python
 sales_per = sales_segment.df.copy()
 
 # Calculation proportion
