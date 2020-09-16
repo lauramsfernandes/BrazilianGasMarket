@@ -243,6 +243,8 @@ class MyDataFrame:
 
 ## Demand
 
+To understand the behavior of the Brazilian Natural Gas market, is important to analyze the demand for fuel in recent years. In the article this is done with a selection of the items referring to the demand in the balance sheet table.
+
 At [wrangling file](1_naturalGas_Wrangling.ipynb) under the number `6` you can find the code thats load and set the MyDataFrame instantiated class about the Brazilian Natural Gas demand.
 
 ```python
