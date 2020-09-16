@@ -325,7 +325,7 @@ The graph above shows:
 * Increased gas reinjection caused by oil production in the pre-salt layer
 * Decrease in sales. Motivation needs more research.
 
-## Reinjection
+## Reinjection: Reservoir Strategy or Lack of Structure?
 
 It is import to mention the reinjection question to clarify some miscomprehension about the subject that can lead to wrong assumptions about the Natural Gas demand. Some industry consultants with economy background may think that reinjection is a Natural Gas waste. However is a reservoir technique to maintain its internal pressure and improve oil recovery.
 
@@ -353,7 +353,7 @@ plt.savefig('plots/corr.png',dpi=600,bbox_inches='tight')
 
 * The heatmap above does not show any considerable correlation between reinjection and others variables linked with Natural Gas waste.
 
-## Sales
+## How are sales structured by segment?
 
 Knowing the segments that exist in sales is important to identify where the increase in gas supply may be accommodated in the future. The data was scrapped from a govern report [Monthly Industry Follow-up Natural Gas Bulletin](http://www.mme.gov.br/documents/36216/1119340/06+-+Boletim+Mensal+de+Acompanhamento+da+Ind%C3%BAstria+de+G%C3%A1s+Natural+Junho+2020/4ecd27ca-bd64-bfa7-3510-03799045f87f), and after being collected, a new dataframe was created with the proportion of each segment to generate a stacked bar graph.
 
@@ -414,7 +414,7 @@ sales_per.footer = 'Source:\nMME, Monthly Industry Follow-up Bulletin of Natural
 * The industrial and electric generation segments are mainly the largest consumers of Natural Gas
 * It is possible to notice that the electric power generation fluctuation segment follow the same trend as the variation of electric energy production (graph below) in the same period.
 
-## Energy Sector
+## How can the New Gas Market impact the Energy Sector?
 
 The Brazilian electric system is very dependent on  intermittent energy sources (e.g., hydro). Opening up the Natural Gas market, consequently increasing its supply, is an opportunity to reduce this dependency.
 
