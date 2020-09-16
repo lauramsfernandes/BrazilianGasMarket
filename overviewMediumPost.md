@@ -11,6 +11,235 @@
 
 All plots code can be found on [plot file](2_naturalGas_Plots.ipynb).
 
+## MyDataFrame Class
+
+In order to capture and simplify access to some important informations *(e.g. title, unit)* about the tables collected, and to assembly all functions as methods in a the same place, a class was created. `MyDataFrame` class also perfomes some changes into the original tables to improve their readability and to translate some terms.
+
+Parameters:
+
+>`df`: is a csv file readed by pd.read_csv function.
+
+>`translate`: is a boolean that calls the translate method.
+
+>`translate_first_level`: is a boolean that says if the first level of a MultiIndex DataFrame should be translated or not, since some of them are proper noun and should not be translated.
+
+>`white_space`: is a boolean that replace white space for underscore in all indexes, in case of using loc function.
+
+>`drop_level`: is a boolean that calls the drop_levels method and drops column levels from a MultiIndex DataFrame until becames a Index DataFrame.
+
+
+        self.translator = Translator()
+        self.title = ''
+        self.unit = ''
+        self.footer = ''
+        self.translate = translate
+        self.translate_first_level = translate_first_level
+        self.white_space= white_space
+        self.drop_level = drop_level
+
+
+Atributes:
+
+>`df`: is the DataFrame it self.
+
+>`translator`: a Translator() instancied object 
+
+>`title`: is the DataFrame's title.
+
+>`unit`: is the DataFrame's units.
+
+>`footer`: is the DataFrame's source and notes.
+
+> `self.translate`: is a boolean that allows translation methods.
+
+> `self.translate_first_level`: is a boolean that call the translate_first_level method.
+
+Methods:
+
+>`drop_na()`: drops all rows and columns that have all values equals to NaN.
+
+> `drop_levels()`:  drops all levels that categorize the table itself, and not its values individually. However those informations are allocated as table's title and unit for later use.
+
+>`index_translate_index()`: translate a index DataFrame to English.
+
+>`index_translate_multi_index()`: translate a MultiIndex DataFrame to English.
+
+>`drop_last_column()`: drop the last column if it has been configured as an unnamed column. The value of this column is a ratio that is redundant to our project.
+
+Translations from Portuguese to English will also be performed within the class using `googletrans` package. The words that are not supported by the package will be translated directly using a dictionary.
+
+```python
+class MyDataFrame:
+    def __init__(self, df, translate=False, translate_first_level=False, drop_level=True):
+
+        self.df = df
+        self.translate = translate
+        self.translate_first_level = translate_first_level
+        self.drop_level = drop_level
+        self.translator = Translator()
+        self.title = ''
+        self.unit = ''
+        self.footer = ''
+
+
+        if self.df.index.nlevels > 1:
+            self.title_unit_multiindex();
+
+        if self.drop_level:
+            self.drop_levels()
+
+
+        if self.translate:
+            if self.df.index.nlevels == 1:
+                self.translate_index()
+
+
+        if self.translate:
+            if self.df.index.nlevels > 1:
+                self.translate_multi_index()
+
+
+        if self.white_space:
+            self.replace_white_space()
+
+
+        self.drop_na()
+
+
+    def title_unit_multiindex(self):
+        self.title = self.df.columns[0][0]
+        self.unit = self.df.columns[1][1]
+
+    def drop_levels(self):
+        """
+        Drops two column levels that contained the infos previously captured (table's title and unit)
+        """
+        while self.df.columns.nlevels>1:
+            self.df.columns = self.df.columns.droplevel(0)
+
+
+    def drop_na(self):
+        """
+        Drops all rows and columns that have all values equals to NaN.
+        """
+        self.df.dropna(how = 'all', inplace = True)
+        self.df.dropna(axis = 'columns', how = 'all', inplace = True)
+
+
+    def translate_index(self):
+        """
+        Translates the index of a DataFrame to English.
+        """
+        self.new_index = []
+        for index in self.df.index:
+            if index == 'Reinjeção':
+                self.new_index.append('Reinjection')
+            elif (index == 'Espírito Santo') or (index == 'Espirito_Santo'):
+                self.new_index.append('Espirito_Santo')
+            elif index == 'Amazonas':
+                self.new_index.append('Amazonas')
+            elif index == 'Alagoas':
+                self.new_index.append('Alagoas')
+            elif (index == 'Ceará') or (index == 'Ceara'):
+                self.new_index.append('Ceara')
+            elif (index == 'Rio Grande do Norte') or (index == 'Rio_Grande_do_Norte'):
+                self.new_index.append('Rio_Grande_do_Norte')
+            else:
+                self.new_index.append(self.translator.translate(index).text)
+        self.df.index = self.new_index
+
+
+    def translate_multi_index(self):
+        """
+        Translates a MultiIndex DataFrame to English.
+        """
+        if self.translate_first_level == True:
+            for i, num in enumerate(self.df.index):
+                    for j in range(self.df.index.nlevels):
+                        if j==0:
+                            if (self.df.index[i][j] == 'Espírito_Santo') or (self.df.index[i][j] == 'Espirito_Santo'):
+                                self.df.index = self.df.index.set_levels(self.df.index.levels[j].str.replace('Espírito_Santo','Espirito_Santo'), level = j)
+                            elif self.df.index[i][j] == 'Amazonas':
+                                self.df.index = self.df.index.set_levels(self.df.index.levels[j].str.replace('Amazonas','Amazonas'), level = j)
+                            elif self.df.index[i][j] == 'Alagoas':
+                                self.df.index = self.df.index.set_levels(self.df.index.levels[j].str.replace('Alagoas','Alagoas'), level = j)
+                            elif (self.df.index[i][j] == 'Ceará') or (self.df.index[i][j] == 'Ceara'):
+                                self.df.index = self.df.index.set_levels(self.df.index.levels[j].str.replace('Ceará','Ceara'), level = j)
+                            elif (self.df.index[i][j] == 'Rio Grande do Norte') or (self.df.index[i][j] == 'Rio_Grande_do_Norte'):
+                                self.df.index = self.df.index.set_levels(self.df.index.levels[j].str.replace(' ','_'), level = j)
+                            else:
+                                self.df.index = self.df.index.set_levels(self.df.index.levels[j].str.replace(self.df.index[i][j], self.translator.translate(self.df.index[i][j]).text), level = j)
+
+        for i, num in enumerate(self.df.index):
+            for j in range(self.df.index.nlevels):
+                if j==0:
+                    pass
+                if j==1:
+                    if self.df.index[i][j] == 'Mar': # checks if one of the words that the translate package can not translate
+                        self.df.index = self.df.index.set_levels(self.df.index.levels[j].str.replace('Mar','Offshore'), level = j)
+                    elif self.df.index[i][j] == 'Terra': # checks if one of the words that the translate package can not translate
+                        self.df.index = self.df.index.set_levels(self.df.index.levels[j].str.replace('Terra','Onshore'), level = j)
+                    elif not isinstance(self.df.index[i][j], str):
+                        pass
+                    else:
+                        self.df.index = self.df.index.set_levels(self.df.index.levels[j].str.replace(self.df.index[i][j], self.translator.translate(self.df.index[i][j]).text), level = j)
+
+
+    def replace_underscore(self):
+        """
+        Replaces all underscore for white space.
+        """
+        if self.df.index.nlevels > 1: # tells how many level are
+            for i, level in enumerate(range(self.df.index.nlevels)): # runs through levels
+                #for j, value in enumerate(self.df.index.levels[i]): # runs through the level's value and replace white space for underline
+                self.df.index = self.df.index.set_levels(self.df.index.levels[i].str.replace("_", " "), level = i)
+
+        elif self.df.index.nlevels == 1:
+            self.new_index = []
+            for index in self.df.index:
+                self.new_index.append(index.replace('_', ' '))
+            self.df.index = self.new_index
+
+
+    def drop_unnamed_column(self):
+        """
+        Drops the last column if its name starts with 'Unnamed'.
+        """
+        for i,name in enumerate(self.df.columns):
+            if type(name) == str and name.startswith('Unnamed'):
+                self.df = self.df.drop(self.df.columns[-1], axis=1)
+
+
+    def index_sups(self):
+        """
+        Fix all index that has number as supscript.
+        """
+        if self.df.index.nlevels > 1:
+            for name in self.df.index.levels[0]:
+
+                self.df.index = self.df.index.set_levels(self.df.index.levels[0].str.replace('1','¹'), level = 0)
+                self.df.index = self.df.index.set_levels(self.df.index.levels[0].str.replace('2','²'), level = 0)
+                self.df.index = self.df.index.set_levels(self.df.index.levels[0].str.replace('3','³'), level = 0)
+                self.df.index = self.df.index.set_levels(self.df.index.levels[0].str.replace('4','⁴'), level = 0)
+                self.df.index = self.df.index.set_levels(self.df.index.levels[0].str.replace('5','⁵'), level = 0)
+                self.df.index = self.df.index.set_levels(self.df.index.levels[0].str.replace('6','⁶'), level = 0)
+                self.df.index = self.df.index.set_levels(self.df.index.levels[0].str.replace('7','⁷'), level = 0)
+                self.df.index = self.df.index.set_levels(self.df.index.levels[0].str.replace('8','⁸'), level = 0)
+                self.df.index = self.df.index.set_levels(self.df.index.levels[0].str.replace('9','⁹'), level = 0)
+
+        if self.df.index.nlevels == 1:
+            self.df.index = self.df.index.str.replace('1','¹')
+            self.df.index = self.df.index.str.replace('2','²')
+            self.df.index = self.df.index.str.replace('3','³')
+            self.df.index = self.df.index.str.replace('4','⁴')
+            self.df.index = self.df.index.str.replace('5','⁵')
+            self.df.index = self.df.index.str.replace('6','⁶')
+            self.df.index = self.df.index.str.replace('7','⁷')
+            self.df.index = self.df.index.str.replace('8','⁸')
+            self.df.index = self.df.index.str.replace('9','⁹')
+
+```
+
 ## Demand
 
 At [wrangling file](1_naturalGas_Wrangling.ipynb) under the number `6` you can find the code thats load and set the MyDataFrame instantiated class about the Brazilian Natural Gas demand.
