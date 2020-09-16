@@ -357,7 +357,7 @@ The Brazilian electric system is very dependent on  intermittent energy sources 
 
 To show how dependent the electricity production are from hydropower, two dataframes, one of energy production in the last decade and the other of monthly average of precipitation in the country are created at [wrangling file](1_naturalGas_Wrangling.ipynb) under the numbers `10` and `14`. With these two data, it is possible to have an idea of the system vulnerability.
 
-'''python
+```python
 energy_source = pd.read_csv(r'data_set/GeracaoFonte.csv')
 
 # Translating Manually
@@ -401,8 +401,8 @@ precip.df.drop('Year', axis=1, inplace=True)
 precip.unit='mm/month'
 precip.title='Average Preciptation Rate Monthly'
 precip.footer='Source: \nThe data used in this visualization were produced with the Giovanni online data system, \ndeveloped and maintained by the NASA GES DISC.'
-'''
-'''python
+```
+```python
 energy_source.df.sum(axis=0, level=0).plot(kind='area', figsize=(10,5), colormap='tab10')
 plt.figtext(0.05,-0.1, energy_source.footer)
 plt.ylabel(energy_source.unit)
@@ -410,11 +410,11 @@ plt.xticks(np.arange(2000,2019,1))
 plt.title(energy_source.title)
 plt.legend(bbox_to_anchor=(1.01, 1), loc='upper left', borderaxespad=0.);
 plt.savefig('plots/energy_source.png',dpi=600,bbox_inches='tight')
-'''
-'''python
+```
+```python
 precip.df.mean().plot(kind='bar')
 plt.ylabel(precip.unit)
 plt.title('Brazilian Monthly Average Precipitation')
 plt.figtext(0.05,-0.02, precip.footer);
 plt.savefig('plots/avg_precip.png',dpi=1200,bbox_inches='tight');
-'''
+```
