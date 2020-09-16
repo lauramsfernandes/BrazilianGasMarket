@@ -13,7 +13,7 @@ All plots code can be found on [plot file](2_naturalGas_Plots.ipynb).
 
 ## MyDataFrame Class
 
-In order to capture and simplify access to some important informations *(e.g. title, unit)* about the tables collected, and to assembly all functions as methods in a the same place, a class was created. `MyDataFrame` class also perfomes some changes into the original tables to improve their readability and to translate some terms.
+In order to capture and simplify access to some important informations *(e.g., title, unit)* about the tables collected, and to assembly all functions as methods in a the same place, a class was created. `MyDataFrame` class also perfomes some changes into the original tables to improve their readability and to translate some terms.
 
 Parameters:
 
@@ -66,7 +66,7 @@ Methods:
 
 >`drop_last_column()`: drop the last column if it has been configured as an unnamed column. The value of this column is a ratio that is redundant to our project.
 
-Translations from Portuguese to English will also be performed within the class using `googletrans` package. The words that are not supported by the package will be translated directly using a dictionary.
+Translations from Portuguese to English will also be performed within the class using [googletrans](https://pypi.org/project/googletrans/) package. The words that are not supported by the package will be translated directly using a dictionary.
 
 ```python
 class MyDataFrame:
