@@ -353,6 +353,68 @@ sales_per.footer = 'Source:\nMME, Monthly Industry Follow-up Bulletin of Natural
 
 ## Energy Sector
 
-The Brazilian electric system is very dependent on interminable energy sources (e.g., hydro). And opening up the gas market, consequently increasing its supply, is an opportunity to reduce this dependency. To show how dependent the electricity production are from hydropower, A time series of energy production in the last decade and the monthly average of precipitation in the country are created at [wrangling file](1_naturalGas_Wrangling.ipynb) under the number `16`. With these two data, it is possible to have an idea of the system vulnerability.
+The Brazilian electric system is very dependent on  intermittent energy sources (e.g., hydro). Opening up the Natural Gas market, consequently increasing its supply, is an opportunity to reduce this dependency.
 
+To show how dependent the electricity production are from hydropower, two dataframes, one of energy production in the last decade and the other of monthly average of precipitation in the country are created at [wrangling file](1_naturalGas_Wrangling.ipynb) under the numbers `10` and `14`. With these two data, it is possible to have an idea of the system vulnerability.
 
+'''python
+energy_source = pd.read_csv(r'data_set/GeracaoFonte.csv')
+
+# Translating Manually
+energy_source.columns = ['ID', 'Energy Type', 'GWh', 'Month', 'Year', 'dthProx']
+
+# Converting into MyDataFrame
+energy_source = MyDataFrame(pd.pivot_table(energy_source, values='GWh', index=['Energy Type'], columns=['Year', 'Month']), drop_level=False)
+
+# Translating Index Manually
+energy_source.df.index = ['Biomass','Coal','Energy Produced Out of SIN','Eolic','Natural Gas','Hidrelectric','Itaipu','Nuclear','Diesel/Oil','Waste Industrial Processes','Solar']
+
+# Transposing DataFrame
+energy_source.df = energy_source.df.T
+
+# Adding all Hydro Sources into one column
+energy_source.df['Hydroelectric'] = (energy_source.df.loc[:,'Itaipu'] + energy_source.df.loc[:,'Hidrelectric'])
+energy_source.df.drop(['Hidrelectric','Itaipu'], axis=1, inplace=True)
+
+# Dropping 2019
+energy_source.df.drop(2019,inplace=True)
+
+# Setting unit, title and footer
+energy_source.unit = 'GWh'
+energy_source.title = 'Electric Energy by Source'
+energy_source.footer = 'Source: ANEEL\nNotes: History of the electric energy volume produced in the country in GWh, expressed by the values of energy load \ndispatched in the National Interconnected System - SIN, classified by renewable sources or not and the volume \nproduced by the generators not yet interconnected.'
+'''
+'''python
+skip = np.arange(0,21,1)
+precip = MyDataFrame(pd.read_csv(r'data_set\precip.csv', skiprows=skip))
+
+# Setting Columns Name
+precip.df.columns = ['Year','Jan','Feb','Mar','Apr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dec']
+
+# Setting DataFrama Index
+precip.df.index = precip.df.loc[:,'Year']
+
+# Dropping Year Column
+precip.df.drop('Year', axis=1, inplace=True)
+
+# Setting unit, title and footer
+precip.unit='mm/month'
+precip.title='Average Preciptation Rate Monthly'
+precip.footer='Source: \nThe data used in this visualization were produced with the Giovanni online data system, \ndeveloped and maintained by the NASA GES DISC.'
+'''
+'''python
+energy_source.df.sum(axis=0, level=0).plot(kind='area', figsize=(10,5), colormap='tab10')
+plt.figtext(0.05,-0.1, energy_source.footer)
+plt.ylabel(energy_source.unit)
+plt.xticks(np.arange(2000,2019,1))
+plt.title(energy_source.title)
+plt.legend(bbox_to_anchor=(1.01, 1), loc='upper left', borderaxespad=0.);
+plt.savefig('plots/energy_source.png',dpi=600,bbox_inches='tight')
+'''
+'''python
+precip.df.mean().plot(kind='bar')
+plt.ylabel(precip.unit)
+plt.title('Brazilian Monthly Average Precipitation')
+plt.figtext(0.05,-0.02, precip.footer);
+plt.savefig('plots/avg_precip.png',dpi=1200,bbox_inches='tight');
+'''
