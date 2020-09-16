@@ -243,7 +243,7 @@ class MyDataFrame:
 
 ## Demand
 
-To understand the behavior of the Brazilian Natural Gas market, is important to analyze the demand for fuel in recent years. In the article this is done with a selection of the items referring to the demand in the balance sheet table.
+To understand the behavior of the Brazilian Natural Gas market, is important to analyze the demand for the fuel in recent years. In the article this is done with a selection of the items referring to the demand in the balance sheet table.
 
 At [wrangling file](1_naturalGas_Wrangling.ipynb) under the number `6` you can find the code thats load and set the MyDataFrame instantiated class about the Brazilian Natural Gas demand.
 
@@ -269,9 +269,10 @@ plt.savefig('plots/demand.png',dpi=1200,bbox_inches='tight')
 
 ## Reinjection
 
-It is import to mention the reinjection question to clarify some miscomprehension about the subject that can lead to wrong assumptions about the natural gas demand. Some industry consultants with economy background may think that reinjection is a natural gas waste. However is a reservoir technique to maintain its internal pressure.
+It is import to mention the reinjection question to clarify some miscomprehension about the subject that can lead to wrong assumptions about the Natural Gas demand. Some industry consultants with economy background may think that reinjection is a Natural Gas waste. However is a reservoir technique to maintain its internal pressure and improve oil recovery.
 
 A correlation graph using the `balance` dataframe was plot to prove that reinjection has no relation with any waste metric. For example, if the reinjection had any correlation with gas flaring, it would indicates that reinjection were being made in the same period of time that offshore plataforms was burning gas to relieve the production.
+
 ```python
 corr = balance.df.corr()
 ax = sns.heatmap(
@@ -291,8 +292,10 @@ plt.title('Balance Correlation')
 plt.savefig('plots/corr.png',dpi=600,bbox_inches='tight')
 ```
 ![Correlation](./plots/corr.png)
+
 ## Sales
-The data was scrapped from a govern report [Monthly Industry Follow-up Natural Gas Bulletin](http://www.mme.gov.br/documents/36216/1119340/06+-+Boletim+Mensal+de+Acompanhamento+da+Ind%C3%BAstria+de+G%C3%A1s+Natural+Junho+2020/4ecd27ca-bd64-bfa7-3510-03799045f87f).
+
+Knowing the segments that exist in sales is important to identify where the increase in gas supply may be accommodated in the future. The data was scrapped from a govern report [Monthly Industry Follow-up Natural Gas Bulletin](http://www.mme.gov.br/documents/36216/1119340/06+-+Boletim+Mensal+de+Acompanhamento+da+Ind%C3%BAstria+de+G%C3%A1s+Natural+Junho+2020/4ecd27ca-bd64-bfa7-3510-03799045f87f), and after being collected, a new dataframe was created with the proportion of each segment to generate a stacked bar graph.
 
 ```python
 # Dict with values scrapp from MME Relatory
